@@ -92,15 +92,6 @@ fun Principal(modifier: Modifier = Modifier, onLogoffClick: () -> Unit) {
                             tint = Color.White
                         )
                     }
-                },
-                floatingActionButton = {
-                    FloatingActionButton(
-                        onClick = { /* do something */ },
-                        containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
-                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
-                    ) {
-                        Icon(Icons.Filled.Add, "Localized description")
-                    }
                 }
             )
         },
@@ -114,7 +105,7 @@ fun Principal(modifier: Modifier = Modifier, onLogoffClick: () -> Unit) {
                 Text(
                     modifier = Modifier.padding(25.dp),
                     text = """
-                        Essa é a atividade para prática de scaffold.
+                        Essa é uma atividade para prática de PDM.
                     """.trimIndent(),
                 )
 

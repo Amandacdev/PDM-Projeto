@@ -12,12 +12,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.BottomAppBarDefaults
@@ -49,7 +47,7 @@ import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Login(modifier: Modifier = Modifier, onSignInClick: () -> Unit, onCadastroClick: () -> Unit) {
+fun Cadastro(modifier: Modifier = Modifier, onSignInClick: () -> Unit) {
 
     var login by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
@@ -68,7 +66,7 @@ fun Login(modifier: Modifier = Modifier, onSignInClick: () -> Unit, onCadastroCl
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = "Tela de Login",
+                            text = "Tela de Cadastro",
                             fontSize = 20.sp
                         )
                     }
@@ -131,41 +129,10 @@ fun Login(modifier: Modifier = Modifier, onSignInClick: () -> Unit, onCadastroCl
                     )
                 }
                 Spacer(modifier = Modifier.height(16.dp))
-                FloatingActionButton(
-                    onClick = {
-                        if (login ==  senha) {
-                            onSignInClick()
-                        } else {
-                            mensagemErro = "Login ou senha inválidos!"
-                        }
-                    },
-                    containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
-                    shape = RoundedCornerShape(12.dp),
-                    elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
-                ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.Center,
-                        modifier = Modifier
-                            .padding(horizontal = 12.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Filled.AccountCircle,
-                            contentDescription = "Login Icon",
-                            tint = Color.Black
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = "Entrar",
-                            color = Color.Black,
-                            fontSize = 16.sp
-                        )
-                    }
-                }
+
                 Spacer(modifier = Modifier.height(10.dp))
                 FloatingActionButton(
                     onClick = {
-                        onCadastroClick()
                     },
                     containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
                     shape = RoundedCornerShape(12.dp),
@@ -205,4 +172,3 @@ fun Login(modifier: Modifier = Modifier, onSignInClick: () -> Unit, onCadastroCl
         }
     )
 }
-

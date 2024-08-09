@@ -1,5 +1,4 @@
 package com.example.projetoapp
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.projetoapp.ui.theme.theme.ProjetoappTheme
 import com.example.projetoapp.ui.theme.telas.Login
 import com.example.projetoapp.ui.theme.telas.Principal
+import com.example.projetoapp.ui.theme.telas.Cadastro
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +31,9 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.padding(innerPadding),
                                 onSignInClick = {
                                     navController.navigate("principal")
+                                },
+                                onCadastroClick = {
+                                    navController.navigate("cadastro")
                                 }
                             )
                         }
@@ -39,6 +42,15 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.padding(innerPadding),
                                 onLogoffClick = {
                                     navController.navigate("login")
+                                }
+                            )
+                        }
+
+                        composable("cadastro") {
+                            Cadastro(
+                                modifier = Modifier.padding(innerPadding),
+                                onSignInClick = {
+                                    navController.navigate("cadastro")
                                 }
                             )
                         }
@@ -54,7 +66,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     // Use Greeting as a placeholder or for actual implementation
     Login(
         modifier = modifier,
-        onSignInClick = {}
+        onSignInClick = {},
+        onCadastroClick = {}
     )
 }
 
