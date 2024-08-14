@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
                             Cadastro(
                                 modifier = Modifier.padding(innerPadding),
                                 onSignInClick = {
-                                    navController.navigate("cadastro")
+                                    navController.navigate("principal")
                                 }
                             )
                         }

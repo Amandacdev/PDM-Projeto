@@ -133,6 +133,7 @@ fun Cadastro(modifier: Modifier = Modifier, onSignInClick: () -> Unit) {
                 Spacer(modifier = Modifier.height(10.dp))
                 FloatingActionButton(
                     onClick = {
+                        onSignInClick()
                     },
                     containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
                     shape = RoundedCornerShape(12.dp),
